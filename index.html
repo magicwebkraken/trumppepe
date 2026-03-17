@@ -316,13 +316,13 @@
     <script src="js/demo.js"></script>
     <script>
       document.getElementById("copyText").addEventListener("click", function () {
-        const text = this.innerText;
+        navigator.clipboard.writeText("CA"); // only copy CA
 
-        navigator.clipboard.writeText(text).then(() => {
-          alert("Copied: " + text);
-        }).catch(err => {
-          console.error("Failed to copy:", err);
-        });
+        // optional feedback
+        this.textContent = "Copied!";
+        setTimeout(() => {
+          this.textContent = "CA : ComingSoon";
+        }, 1500);
       });
     </script>
   </body>
