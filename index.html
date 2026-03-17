@@ -72,6 +72,9 @@
               <a href="https://pump.fun/coin/0xComingSoon" class="header__button">
                 <span>Buy now </span>
               </a>
+                <p id="copyText" style="cursor: pointer;">
+                  CA : ComingSoon
+                </p>
             </div>
           </div>
         </div>
@@ -311,5 +314,16 @@
     </div>
     <script src="js/app.min.js?_v=20240806224551"></script>
     <script src="js/demo.js"></script>
+    <script>
+      document.getElementById("copyText").addEventListener("click", function () {
+        const text = this.innerText;
+
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Copied: " + text);
+        }).catch(err => {
+          console.error("Failed to copy:", err);
+        });
+      });
+    </script>
   </body>
 </html>
